@@ -31,7 +31,11 @@ class HotelList extends React.Component{
             let {hotel_details} = hotel;
             let bed_details = Object.values(hotel_details.BedDetails);
             let images = Object.values(hotel_details.images);
-            let image_path = 'http://dev-three.usoft.co.uk/public/uploads/users/client/hotels/'+images[0].PictureName;
+            let image_path = 'http://dev-three.usoft.co.uk/public/uploads/users/client/hotels/';
+            if(images.length > 0){
+                image_path=   image_path+images[0].PictureName;
+            }
+            
            
             return (
                 <li  key={hotel_details.HotelID} >
