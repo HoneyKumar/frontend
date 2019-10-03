@@ -1,0 +1,153 @@
+/*!
+ * Start Bootstrap - New Age v4.0.0-beta (http://startbootstrap.com/template-overviews/new-age)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
+ */
+
+body {
+	font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+
+
+
+#footer{
+	background:url(../images/footer-bg.jpg) no-repeat 0 0;
+	background-size: cover;
+    float: left;
+    width: 100%;
+}
+.footer-left {
+    float: left;
+    width: 100%;
+}
+.footer-blocks {
+    width: 20%;
+    float: left;
+    border-right: 1px solid #2a538e;
+    padding: 0 0 0 4%;
+	min-height: 180px;
+}
+.footer-blocks h4 {
+    margin: 0 0 20px;
+    padding: 0;
+	color: #fff;
+}
+.footer-blocks ul {
+    margin: 0;
+    padding: 0;
+}
+.footer-blocks ul li {
+	list-style: none;
+	margin: 0 0 10px;
+	color: #fff;
+	font-size: 14px;
+}
+.footer-blocks ul li a{
+	color: #fff;
+}
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    background: #41a1db;
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 40px;
+    margin: 0 10px;
+}
+.footer-blocks > ul > li > span {
+    float: right;
+    width: 85%;
+    margin: 0 10px 0;
+}
+.footer-social {
+    float: left;
+    width: 100%;
+    margin: 35px 0 0;
+}
+.copyright-text {
+    float: left;
+    width: 100%;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+}
+.foot-logo-sec {
+    border-right: 1px solid #2a538e;
+    min-height: 180px;
+}
+.footer-left div:last-child {
+    border-right: none;
+}
+#footer .container-fluid {
+    padding: 50px 0;
+    background: #0b1d37cc;
+}
+
+/** footer block css ends **/
+@media screen and (max-width:768px)
+{
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin: 0 3px;
+}
+.foot-logo-sec img {
+    width: 80%;
+}
+.footer-blocks {
+    padding: 0;
+}
+.footer-blocks ul li {
+    list-style: none;
+    margin: 0 5px 10px 12px;
+    color: #fff;
+    font-size: 16px;
+	word-wrap: break-word;
+}
+
+.footer-blocks ul li a{
+	 font-size: 16px;
+	word-wrap: break-word;
+	display:ineli;
+}
+.footer-blocks h4 {
+    margin: 0 12px 20px;
+    padding: 0;
+    color: #fff;
+}
+#footer > .container-fluid > .row > .col-md-3.col-sm-3 {
+    padding-right: 0;
+    padding-left: 25px;
+    margin: 0;
+}
+}
+
+@media screen and (max-width:767px)
+{
+.foot-logo-sec img {
+    width: auto;
+}
+.footer-blocks {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #2a538e;
+	border-right:none;
+    padding: 4% 0;
+    min-height:inherit;
+}
+.foot-logo-sec {
+    border-bottom: 1px solid #2a538e;
+	border-right:none;
+    min-height: 180px;
+}
+}
+
+@media screen and (max-width:320px)
+{
+
+}

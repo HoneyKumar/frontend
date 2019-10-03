@@ -1,0 +1,168 @@
+.panel{
+	box-shadow:0 1px 5px rgba(0,0,0,.15);
+	position:relative;
+}
+.spacing-r {
+    margin-right: 0!important;
+}
+.spacing-l {
+    margin-left: 0!important;
+}
+.no-bg{background-color:transparent;}
+.text-green{color:#32A923;}
+.panel-right-border-green{border-left: solid 5px #32A923;}
+.messageContainer span {display: block;font-size: 14px;}
+.messageContainer a {padding-left: 17px;}
+.popover{max-width:450px;}
+.popover-content h5 {font-weight: 600;font-size: 12px;margin-bottom: 25px;}
+
+.popover-content ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.popover-content ul li {
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+.alert-danger-custom{
+	color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+	margin-bottom:0px;
+	padding: 5px;
+    margin-top: 25px;
+}
+.checkin-checkout-details-panel {
+    padding-bottom: 10px;
+}
+.checkin-checkout-details-panel>div:first-child, .room-detail, .ammountContainer, .discountCoupon, .ActualPrice-Container, .PriceWithTaxes {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.dates-container h4, .nights-container h4  {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+	letter-spacing: 0px;
+}
+.room-detail div {
+    font-size: 16px;
+}
+.person-detail-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 10px;
+}
+
+.person-detail-container p {
+    font-size: 16px;
+}
+
+.person-detail-container p + p {
+    margin-bottom: 0;
+}
+.panel-right-border-red {
+    border-left: solid 5px #E12D2D;
+}
+
+.room-left-detail-contaier .icon-clock, .icon-clock {
+    position: absolute;
+    left: 0;
+    top: 38%;
+    font-size: 22px;
+}
+
+.room-left-detail-contaier {
+    position: relative;
+    padding-left: 30px;
+}
+.label-position {
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+.discount-label {
+    border-radius: 2px;
+    background-color: #E12D2D;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.TotalDays {
+    max-width: 60%;
+}
+.TotalPrice {
+    text-decoration: line-through;
+}
+.ammountContainer {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.discountCoupon{
+	color: #32A923;
+    border: 1px dotted #28871c;
+    background-color: rgba(216,238,213,.4);
+	padding: 10px 8px;
+    align-items: center;
+}
+.discountCoupon>div:first-child {
+    max-width: 60%;
+}
+.ActualPrice-Container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #ccc;
+}
+.Pricetax-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.Actual-Taxprice {
+    font-size: 16px;
+    font-weight: 600;
+}
+.PriceWithTaxes {
+    margin-top: 20px;
+}
+.PriceWithTaxes p {
+    margin-bottom: 0;
+	white-space: nowrap;
+}
+.we-price-match-message {
+    background-color: #32A923;
+    font-size: 12px;
+    color: #fff;
+    padding: 8px 8px 8px;
+    margin: 14px 0 10px;
+    position: relative;
+    line-height: 1.33;
+}
+.we-price-match-message .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #32A923;
+    position: absolute;
+    top: -7px;
+    right: 16px;
+}
+.well .radio {
+    padding-left: 0;
+}

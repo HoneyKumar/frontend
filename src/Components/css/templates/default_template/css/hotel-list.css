@@ -1,0 +1,347 @@
+/*!
+ * Start Bootstrap - New Age v4.0.0-beta (http://startbootstrap.com/template-overviews/new-age)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
+ */
+
+body {
+	font-family: 'Helvetica', 'Arial', 'sans-serif';
+}
+@font-face {
+	font-family: 'MyriadPro-Regular';
+	src: url('../fonts/MyriadPro-Regulard41d.eot?#iefix') format('embedded-opentype'), url('../fonts/MyriadPro-Regular.otf') format('opentype'), url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Helvetica', 'Arial', 'sans-serif';
+	font-weight: 200;
+	letter-spacing: 1px;
+}
+
+
+.search-wrapper {
+	background: #20274d;
+	width: 100%;
+	float: left;
+	padding: 15px 0;
+	margin-bottom: 40px;
+}
+.search-col-one, .search-col-two, .search-col-three{
+	width: 32%; 
+	float: left;
+	margin: 0 5px;
+}
+.search-col-three2 { width: 25%;float: left; margin: 0 5px; }
+.search-col-three3 { width: 25%;float: left; margin: 0 5px; }
+.search-col-one input{
+	width: 100%;
+	border-radius: 5px;
+	height: 48px;
+	display: inline-block;
+	border: 0;
+	padding: 5px 10px 5px 40px;
+    background: url(../images/search-icon.jpg) no-repeat #fff 9px 12px;
+}
+.search-col-two input{
+	width: 49%;
+	border-radius: 5px;
+	height: 48px;
+	display: inline-block;
+	border: 0;
+	padding: 5px 10px 5px 40px;
+    background: url(../images/calender-icon.jpg) no-repeat #fff 9px 12px;
+}
+.search-col-three input{
+	width: 49%;
+	border-radius: 5px;
+	height: 48px;
+	float: left;
+	border: 0;
+	padding: 5px 10px 5px 40px;
+    background: url(../images/adult-icon.jpg) no-repeat #fff 9px 12px;
+}
+.search-col-three a{
+	background: #169fd6;
+	width: 49%;
+	border-radius: 5px;
+	height: 48px;
+	float: left;
+	color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 48px;
+    margin-left: 5px;
+    font-weight: 700;
+}
+.search-col-three a:hover{
+	text-decoration: none;
+}
+
+
+
+
+/*========= Hotel Listing Section ===============*/
+.hotel-recommend-col h3{
+	color: #2a2a2e; 
+	font-size: 14px;
+    font-weight: 600;
+    margin: 12px 0;
+}
+.map-view-col {
+    width: 100%;
+    display: block;
+    border: 2px solid #dddfe2;
+    margin-bottom: 30px;
+}
+.map-view-col img {
+    width: 100%;
+}
+.hotel-recommend-list{
+	border: 1px solid #dddfe2;
+	width: 100%;
+    min-height: 120px;
+    margin: 0 0 8px 0;
+}
+.hotel-recommend-list figure{
+	width: 73px;
+	display: table-cell;
+	vertical-align: middle;
+	align-items: center;
+	float: left;
+	height: 118px;
+    overflow: hidden;
+}
+.hotel-recommend-list figure img{
+	display: inline-block;
+}
+.hotel-recommend-info{
+	padding: 8px;
+	float: left;
+	width: 79%;
+}
+.hotel-recommend-name {
+	font-weight: 600;
+    margin-bottom: 2px
+}
+.hotel-recommend-price-details{
+	text-align: right;
+}
+.hotel-recommend-pernighttext {
+	font-size: 10px;
+    line-height: 10px;
+    margin: 3px 0;
+    display: block;
+}
+.hotel-recommend-price {
+	font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: #e12d2d;
+    display: block;
+}
+.hotel-listing-wrap {
+    display: block;
+}
+.hotel-listing-wrap ul{margin:0; padding: 0;}
+.hotel-listing-wrap ul li{
+	list-style-type: none;
+	float: left;
+	width: 100%;
+	border: 1px solid #dddfe2;
+    min-height: 220px;
+    margin: 0 0 15px 0;
+    transition: box-shadow, 0.2s, ease-in-out;
+    box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
+}
+.hotel-listing-wrap ul li a:hover{text-decoration: none;}
+.hotel-listing-info{
+	padding: 8px 8px 38px 8px;
+	float: left;
+	width: 64%;
+}
+.hotel-listing-list figure{
+	width: 260px;
+	display: table-cell;
+	vertical-align: middle;
+	align-items: center;
+	float: left;
+	height: 218px;
+    overflow: hidden;
+}
+.hotel-listing-list figure img{
+	height: 100%;
+}
+.hotel-listing-infobox {
+    float: left;
+    width: 42%;
+    padding: 8px 10px;
+    border-right: 1px solid #dddfe2;
+    min-height: 218px;
+}
+.hotel-listing-name{
+	font-weight: 600;
+    margin-bottom: 5px
+}
+.hotel-listing-location {
+    color: #0283df;
+    font-weight: 700;
+    font-size: 12px;
+    position: relative;
+    padding-left: 16px;
+    display: block;
+}
+.hotel-listing-infobox a.hotel-listing-location:hover{
+	text-decoration: underline;
+	color: #0283df;
+}
+.hotel-listing-location i{
+	font-size: 16px;
+	padding-right: 5px;
+    position: absolute;
+    left: 0;
+}
+.hotel-listing-feedback{
+	width: 100%;
+	float: left;
+	margin: 10px 0 5px;
+}
+.hotel-listing-feedback ul li{
+	list-style-type: none;
+	float: left;
+	padding: 2px 10px;
+	width: auto;
+    min-height: auto;
+    box-shadow: none;
+    margin: 0 10px 8px 0;
+    border-color: #333;
+}
+.hotel-listing-feedback ul li.active{
+	border-color: #66be5b;
+}
+.hotel-listing-feedback ul li.active a{
+	color: #66be5b;
+}
+.hotel-listing-feedback ul li a {
+    font-size: 12px;
+    display: block;
+    color: #333;
+    font-weight: 700;
+}
+.hotel-listing-PriceAndReview {
+    width: 22%;
+    float: right;
+    padding: 8px 8px 8px 8px;
+    position: relative;
+    min-height: 218px;
+}
+.PriceAndReview-price-wrapper {
+    text-align: right;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+.price-bags-col {
+    background: #d8eed5;
+    font-size: 10px;
+    line-height: 12px;
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 6px 4px 6px;
+    color: #28871c;
+    margin: 5px 0;
+}
+.PriceAndReview-priceper {
+    color: #737373;
+    font-size: 10px;
+}
+.PriceAndReview-price-box span{
+	color: #737373;
+}
+.PriceAndReview-price-box {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #e12d2d;
+    margin: 5px 0;
+}
+.hotel-review-details {
+    display: block;
+    width: 65%;
+    float: left;
+    text-align: right;
+}
+.hotel-review-count {
+    font-weight: 700;
+    font-size: 12px;
+    padding-top: 4px;
+    line-height: 12px;
+    color: #777;
+}
+.hotel-review-text {
+    font-size: 14px;
+    overflow-wrap: break-word;
+    line-height: 12px;
+    font-weight: 600;
+    color: #333;
+}
+.hotel-review-score {
+    width: 40px;
+    height: 30px;
+    display: block;
+    float: right;
+    background: #169fd6;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/*========== Responsive ==============*/
+
+@media screen and (max-width: 1750px) {
+
+	
+
+}
+
+@media screen and (max-width: 1599px) {
+
+	
+
+}
+
+@media screen and (max-width: 1366px) {
+	
+
+}
+
+@media screen and (max-width: 1199px) {
+	
+	
+
+}
+
+@media screen and (max-width: 991px) {
+	
+	
+}
+
+@media screen and (max-width: 767px) {
+
+
+
+}
