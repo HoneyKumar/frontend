@@ -208,7 +208,7 @@ class HotelDetailsComponent extends React.Component{
                                     <div className="row">
                                         <div className="col-sm-6">
                                             <div className="media">
-                                            <div className="media-left media-middle"> <svg width="2em" height="2em" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="text-warning" style={svgStyle}>
+                                            <div className="media-left media-middle"> <svg width="2em" height="2em" id="Layer_1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 32 32" className="text-warning" style={svgStyle}>
                                                 <path className="st0" d="M31.5 24.3l-5.3-5c1.3-2 2.1-4.3 2.1-6.8C28.3 5.7 22.8.3 16.1.3 9.2.2 3.8 5.7 3.8 12.5c0 2.5.8 4.8 2 6.8L.5 24.4c-.2.2-.3.5-.2.8.1.3.3.5.6.5l4.6.7 1 4.7c.1.3.3.5.5.6h.2c.2 0 .4-.1.5-.2l7.1-6.8c.4 0 .8.1 1.2.1.4 0 .8 0 1.1-.1l7 6.8c.1.1.3.2.5.2h.2c.3-.1.5-.3.5-.6l.9-4.6 4.8-.9c.3-.1.5-.3.6-.5.2-.3.1-.6-.1-.8zM7.7 29.5l-.8-3.9c-.1-.3-.3-.5-.6-.6l-3.6-.6 4.1-4c1.6 1.9 3.8 3.3 6.3 3.9l-5.4 5.2zm-2.5-17C5.2 6.6 10.1 1.8 16 1.8s10.7 4.8 10.7 10.8S21.9 23.2 16 23.2c-5.9 0-10.8-4.8-10.8-10.7zm20.4 12.7c-.3.1-.5.3-.6.6l-.8 3.8-5.2-5.2c2.5-.6 4.7-2 6.3-3.9l4.2 3.9-3.9.8z"></path>
                                                 <path className="st0" d="M19.6 8.5L13 15.3 11.5 14c-.3-.3-.8-.3-1.1 0-.3.3-.3.8 0 1.1l1.8 1.6c.2.2.5.3.7.3h.1c.3 0 .5-.1.6-.3l6.9-7.2c.3-.3.3-.8 0-1.1-.1-.2-.6-.2-.9.1z"></path>
                                                 </svg> </div>

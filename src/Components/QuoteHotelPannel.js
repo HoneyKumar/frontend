@@ -7,7 +7,7 @@ class QuoteHotelPannel extends React.Component{
     render(){
         var {hotel_details} = this.props.hotelDetail;
         let images = Object.values(hotel_details.images);
-        let image_path = 'http://dev-three.usoft.co.uk/public/uploads/users/client/hotels/'+images[0].PictureName;
+        let image_path = 'https://dev-six.usoft.co.uk/public/uploads/users/client/hotels/'+images[0].PictureName;
         return (
             <div className="panel-body">
                 <div className="media">
