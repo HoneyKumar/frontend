@@ -1,6 +1,6 @@
 import usoft from '../Components/apis/usoft';
 import history from '../history';
-import {FETCH_CITIES,SELECT_CHECKIN_CHECKOUT_DATE,SELECT_CITY,SEARCH_HOTELS,BOOK_HOTELS,BOOKING_CONFIRMED} from './types';
+import {FETCH_CITIES,SELECT_CHECKIN_CHECKOUT_DATE,SELECT_CITY,SEARCH_HOTELS,BOOK_HOTELS,BOOKING_CONFIRMED,SIGN_IN_USER,HOTEL_FACILITES,ROOM_FACILITIES} from './types';
 // Action Creator
 export const fetchCities = () =>{
     // Return An Action
@@ -35,16 +35,29 @@ export const selectCity = (cityDetails={}) =>{
 
 // search hotel based on city and check in check out date
 
-export const searchHotels =(checkInDate,checkOutDate,cityId)=>{
+export const searchHotels =(checkInDate,checkOutDate,cityId,offset=0,limit=4,hotelStars=null,accommodationType=null,facilityDetails=null,roomId=null)=>{
 
     return async function(dispatch,getState){
+        var params = {};
+        params.check_in_date = checkInDate;
+        params.check_out_date =  checkOutDate;
+        params.city_id = cityId;
+        params.offset = offset;
+        params.limit = limit;
+        if(hotelStars){
+            params.hotel_stars = hotelStars;
+        }
+        if(accommodationType){
+            params.accommodation_type = accommodationType;
+        }
+        if(facilityDetails){
+            params.facility_details = facilityDetails;
+        }
+        if(roomId){
+            params.bed_id = roomId;
+        }
         let hotels = await usoft.get('/hotels',{
-            params:{
-                check_in_date : checkInDate,
-                check_out_date :checkOutDate,
-                city_id : cityId,
-                fields : 'images'
-            }
+            params
         });
 
         dispatch({ type : SEARCH_HOTELS, payload : hotels.data.response.data});
@@ -83,6 +96,39 @@ export const bookRequest = (userDetails,hotelDetails,bookingType)=>{
           dispatch({ type : BOOKING_CONFIRMED, payload : status});
           history.push('/booking-confirmation')
    }
+
+   
+}
+
+export const signInAction = (email,password)=>{
+    return async function(dispatch,getState){
+        await usoft.post('/authenticate',
+             {
+                email_address : email,
+                password : password
+            }
+        ).then((response)=>{
+            
+            if(response.data.token !== ''){
+                localStorage.setItem("token", response.data.token);
+                dispatch({ type: SIGN_IN_USER, payload:response.data.user_details})
+            }
+        }).catch(function (erro){
+
+        });
+        history.push('/');
+    }
+}
+
+export const fetchHotelFacilities = (hotel_id=null)=>{
+    return async function (dispatch){
+        await usoft.get('/hotels-facilities').then((response)=>{
+           
+            dispatch({ type: HOTEL_FACILITES, payload:response.data.response.data})
+        }).catch(function(error){
+
+        });
+    }
 }
 
 

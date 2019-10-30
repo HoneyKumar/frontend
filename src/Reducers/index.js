@@ -5,6 +5,8 @@ import selectCityReducer from './selectCityReducer';
 import searchHotelReducer from './searchHotelReducer';
 import bookHotel from './bookHotel';
 import checkBookingStatus from './checkBookingStatus';
+import signInUser from './signInUser';
+import hotelFacilities from './hotelFacilities';
 
 export default combineReducers({
     cities : citiesReducer,
@@ -12,5 +14,7 @@ export default combineReducers({
     selectedCity : selectCityReducer,
     hotelList : searchHotelReducer,
     bookHotel : bookHotel,
-    isBooked : checkBookingStatus
+    isBooked : checkBookingStatus,
+    userDetails : signInUser,
+    hotelFacilities : hotelFacilities
 });

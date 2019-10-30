@@ -2,9 +2,9 @@
   "name": "usof-frontend",
   "version": "0.1.0",
   "private": true,
-  "engines":{
-    "node" : "10.16.3",
-    "npm" : "6.11.3"
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.11.3"
   },
   "dependencies": {
     "@wojtekmaj/react-daterange-picker": "^2.4.0",
@@ -21,6 +21,7 @@
     "react-scripts": "3.1.1",
     "react-select": "^3.0.4",
     "redux": "^4.0.4",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {

@@ -1,8 +1,6 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-
-
 import chat from './css/templates/default_template/images/chat-icon.jpg';
 
  // with import
@@ -10,6 +8,7 @@ import chat from './css/templates/default_template/images/chat-icon.jpg';
 
 class TopBar extends React.Component{
     render(){
+       
         return(
           
                <div className="top-bar">
@@ -27,8 +26,11 @@ class TopBar extends React.Component{
                                 <div className="top-bar-left right-bar">
                                     <ul>
                                     <li> Web 08 Nov 2017 / 2 Zul Qa'edah 1438 </li>
-                                    <li> 
-                                    <Link to="#"> <img src={require('./css/templates/default_template/images/login-icon.jpg')} alt="login" /> Login</Link> 
+                                    <li>
+                                    {this.props.user.isLogin === true ?( <Link to="#">{this.props.user.userDetails.FirstName}</Link>) : (
+                                        <Link to="/login"> <img src={require('./css/templates/default_template/images/login-icon.jpg')} alt="login" /> Login</Link>
+                                    )   } 
+                                     
                                     <Link to="#"> <img src={require('./css/templates/default_template/images/register-icon.jpg')} alt="register-icon" /> Register</Link> 
                                     </li>
                                     </ul>
@@ -42,5 +44,7 @@ class TopBar extends React.Component{
         )
     }
 }
-
-export default TopBar;
+const mapStateToProps = (state)=>{
+    return {user: state.userDetails}
+}
+export default connect(mapStateToProps,null)(TopBar);

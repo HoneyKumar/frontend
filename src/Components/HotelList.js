@@ -6,32 +6,75 @@ import TopSearchBar from './TopSearchBar';
 import RecomendHotels from './RecomendedHotels';
 import {Link} from 'react-router-dom';
 import {searchHotels} from '../Actions';
+import HotelFacilities from './HotelFacilities';
 
 class HotelList extends React.Component{
 
    
 
-    handleSubmit =(e)=>{
-        e.preventDefault();
-        if(this.handleValidation()){
-            this.props.searchHotels();
-        }
-    }
+  
 
     handleOnCLick =(e)=>{
         e.preventDefault();
         let hotel_id = e.currentTarget.id;
         this.props.history.push('hotel/detail/'+hotel_id);
     }
-  
+    
+    hotelFacilityList = (list)=>{
+        var i =0
+        return list.map(list_det=>{
+           
+            return (
+                    <li key={i++}><Link to="#">{list_det}</Link></li>
+                );        
+        })
+    }
+
+    renderPagination = () =>{
+        let i =1;
+        return this.props.pagination.map(page_det =>{
+            return(
+                <li className="page-item" key={i}><Link to="#" className="page-link" data-offset={page_det.offset} data-limit={page_det.limit} onClick={this.handleSearch}>{i++}</Link></li>
+               
+            )
+            
+        })
+    }
+
+    handleSearch =(e)=>{
+        e.preventDefault();
+        let offset = e.target.dataset.offset; //used for pagination
+        let limit = e.target.dataset.limit; // used for pagination
+        let check_in_date = this.formatDate(this.props.date[0]);
+        let check_out_date = this.formatDate(this.props.date[1]);
+        
+        this.props.searchHotels(check_in_date,check_out_date,this.props.cityId,offset,limit);
+    }
+
+    formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+    }
 
 
     renderList(){
         return this.props.hotelList.map(hotel=>{
+            
             let {hotel_details} = hotel;
+          
             let bed_details = Object.values(hotel_details.BedDetails);
             let images = Object.values(hotel_details.images);
             let image_path = 'https://dev-six.usoft.co.uk/public/uploads/users/client/hotels/';
+            let hotel_facilities = Object.values(hotel_details.HotelFacilities); 
             if(images.length > 0){
                 image_path=   image_path+images[0].PictureName;
             }
@@ -46,13 +89,16 @@ class HotelList extends React.Component{
                                     <Link to="#" className="hotel-listing-location">
                                     <i className="fa fa-map-marker" aria-hidden="true"></i>{hotel_details.Address}</Link>
                                     <div className="hotel-listing-feedback">
-                                    <ul>
-                                        <li><Link to="#">Excellent location</Link></li>
-                                        <li><Link to="#">City center</Link></li>
-                                        <li className="active"><Link to="#">Breakfast</Link></li>
-                                        <li className="active"><Link to="#">Free cancellation</Link></li>
-                                        <li className="active"><Link to="#">Pay later</Link></li>
-                                    </ul>
+                                    
+                                        {
+                                            hotel_facilities.length > 0 && (
+                                                <ul>
+                                                    {this.hotelFacilityList(hotel_facilities)}
+                                                </ul>
+                                            )
+                                        }
+                                       
+                                    
                                     </div>
                                     <div className="recommend-guest"><i className="fa fa-users" aria-hidden="true"></i> Recommended by 90% of guests</div>
                                 </div>
@@ -90,12 +136,22 @@ class HotelList extends React.Component{
                 <TopSearchBar />
                 <div className="container">
                     <RecomendHotels />
+                    <HotelFacilities />
                     <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                         <div className="hotel-listing-wrap">
                            <ul>
                                {this.renderList()}
                             </ul>
                         </div>
+                        <nav aria-label="Page navigation example">
+                            {
+                                this.props.pagination.length > 0 && (
+                                    <ul className="pagination">
+                                    { this.renderPagination() }
+                                   </ul>
+                                )
+                            }
+                        </nav>
                     </div>
                 </div>
                    
@@ -108,8 +164,9 @@ class HotelList extends React.Component{
 }
 
 const mapStateToProps = (state) =>{
-  
-    return {hotelList:Object.values(state.hotelList)}
+   
+
+    return {hotelList:Object.values(state.hotelList.hotel_details), pagination : Object.values(state.hotelList.pagination),date : state.date,cityId:state.selectedCity.value }
 }
 export default connect(mapStateToProps,{searchHotels})(HotelList);
 

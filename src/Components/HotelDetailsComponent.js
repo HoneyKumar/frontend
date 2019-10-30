@@ -24,14 +24,33 @@ class HotelDetailsComponent extends React.Component{
 
     getPerNightPrice = (numberOfNights,totalPrice)=>{
         let pricePerNight = parseFloat(totalPrice)/parseInt(numberOfNights);
-        return pricePerNight; 
+        return parseFloat(pricePerNight).toFixed(2); 
+    }
+
+    renderRoomFacilities = (facilityList)=>{
+        let i= 0;
+        return facilityList.map((facility_det)=>{
+            return(
+                <li key={i++}><span><i className="" aria-hidden="true"></i></span> {facility_det}</li>
+            )
+        })
     }
 
     renderRoomType =(hotel_details)=>{
-      let bed_details = Object.values(hotel_details.BedDetails);
+        let bed_details = [];
+       
+        if(typeof (hotel_details.BedDetails) !== 'undefined' && Object.values(hotel_details.BedDetails).length > 0){
+            bed_details =  Object.values(hotel_details.BedDetails);
+        }
+      
       
       return bed_details.map((bed_detail)=>{
-        
+          
+        let room_facilities = [];
+        if(bed_detail.hasOwnProperty('RoomFacilities')){
+             room_facilities = Object.values(bed_detail.RoomFacilities);
+        }
+    
        
       return (
        
@@ -66,17 +85,17 @@ class HotelDetailsComponent extends React.Component{
                                 </ul>
                                 </div>
                             </div>
-                            <div className=""> <Link to="" className="MasterRoom-infoSeePhotos">Room photos and details</Link>
-                                <ul className="masterRoomFacility">
-                                <li><span><i className="fa fa-wifi" aria-hidden="true"></i></span> Free Wi-Fi</li>
-                                <li><span><i className="fa fa-bed" aria-hidden="true"></i></span> 1 double bed</li>
-                                <li><span><i className="fa fa-home" aria-hidden="true"></i></span> Room size: 12 m²/129 ft²</li>
-                                <li><span><i className="fa fa-window-maximize" aria-hidden="true"></i></span> No Windows view</li>
-                                <li><span><i className="fa fa-wifi" aria-hidden="true"></i></span> Non-smoking</li>
-                                <li><span><i className="fa fa-bath" aria-hidden="true"></i></span> Shower and bathtub</li>
-                                <li className="more"><span><i className="fa fa-plus-circle" aria-hidden="true"></i></span> More features</li>
-                                </ul>
-                            </div>
+                            {
+                                            room_facilities.length > 0 && (
+                                                <div className=""> <Link to="" className="MasterRoom-infoSeePhotos">Room photos and details</Link>
+                                                        <ul className="masterRoomFacility">
+                                                            {this.renderRoomFacilities(room_facilities)}
+                                                       
+                                                        </ul>
+                                                </div>
+                                            )
+                            }
+                           
                             <hr />
                             <div className="reviewScore">
                                 <div className="scoreHolder">
@@ -139,7 +158,7 @@ class HotelDetailsComponent extends React.Component{
                                             <span className="text-green">49%</span><span> cheaper than the average of properties in </span><span className="text-green">Taipei</span>
 
                                         </div>
-                                        <div className="actualPrice">{bed_detail.SellCurrency === '&pound;' ? '£' : bed_detail.SellCurrency} {bed_detail.rate }</div>
+                                        <div className="actualPrice">{bed_detail.SellCurrency === '&pound;' ? '£' : bed_detail.SellCurrency} {parseFloat(bed_detail.rate).toFixed(2) }</div>
                                         <div className="priceWithDiscount">
                                             <span>{bed_detail.SellCurrency === '&pound;' ? '£' : bed_detail.SellCurrency} </span>{this.getPerNightPrice(hotel_details.TotalDays,bed_detail.rate) }
                                         </div>
@@ -335,7 +354,7 @@ class HotelDetailsComponent extends React.Component{
 
 const mapStateToProps =(state,ownProps)=>{
     var hotelId = ownProps.match.params.id;
-    let hotelList = Object.values(state.hotelList);
+    let hotelList = Object.values(state.hotelList.hotel_details);
     var hotelDetail = hotelList.find(({hotel_details})=> parseInt(hotel_details.HotelID) === parseInt(hotelId) );
     return {hotelDetail }
 }

@@ -54,7 +54,9 @@ render(){
 const mapStateToProps = (state)=>{
     let {date} = state;
     let selectedHotel = state.bookHotel.hotelId;
-    let hotelList = Object.values(state.hotelList);
+    console.log(state.hotelList);
+    let hotelList = Object.values(state.hotelList.hotel_details);
+   
     let hotelDetail = hotelList.find(({hotel_details})=> parseInt(hotel_details.HotelID) === parseInt(selectedHotel) );
     let roomQuantity = state.bookHotel.totalRooms;
     let selectedRoomId = state.bookHotel.roomId;
