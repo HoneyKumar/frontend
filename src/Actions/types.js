@@ -8,7 +8,7 @@ export const BOOKING_FAILED = 'BOOKING_FAILED';
 export const SIGN_IN_USER = 'SIGN_IN_USER';
 export const HOTEL_FACILITES = 'HOTEL_FACILITIES';
 export const ROOM_FACILITIES = 'ROOM_FACILITIES';
-
-
-
-
+export const FETCH_ROOMS = 'FETCH_ROOMS';
+export const SELECT_ROOM = 'SELECT_ROOM';
+export const SELECT_GUEST = 'SELECT_GUEST';
+export const SET_ROOM_RATES = 'SET_ROOM_RATES';

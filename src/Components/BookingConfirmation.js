@@ -7,13 +7,13 @@ class BookingConfirmation extends React.Component{
         return(
             <div className="container">
              { this.props.isBooked > 0  ? (
-                 <span>
+                 <div>
                      Your Booking Is done please check your email
-                </span>
+                </div>
              ) : (
-                <span>
+                <div>
                     We can not process booking 
-                </span>
+                </div>
              )}   
             </div>
         )

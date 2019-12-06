@@ -14,14 +14,11 @@ class Login extends React.Component{
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(this.state)
         if(this.handleValidation()){
             let email = this.state.email;
             let password = this.state.password;
             
             this.props.signInAction(email,password);
-           
-
         }
     }
 
@@ -48,9 +45,7 @@ class Login extends React.Component{
         
         return true;
     }
-
-  
-
+    
     render(){
         return (
             <div className="container">
@@ -72,8 +67,7 @@ class Login extends React.Component{
                                 </div>
                             </div>
                             <div className="col-md-12">
-                                
-                                <div className="col-md-6 col-sm-6"><button onClick={this.handleSubmit}>Sign In</button></div>
+                                <div className="col-md-6 col-sm-6"><button className="btn btn-primary" onClick={this.handleSubmit}>Sign In</button></div>
                             </div>
                         </div>
                     </div>
@@ -81,8 +75,6 @@ class Login extends React.Component{
             </div>
         )
     }
-
-
 }
 
 

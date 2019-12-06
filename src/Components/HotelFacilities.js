@@ -8,6 +8,7 @@ class HotelFacilities extends React.Component{
         super(props)
         this.state = {
             checkedItems: new Map(),
+            facility_id : []
           }
     }
     
@@ -22,19 +23,36 @@ class HotelFacilities extends React.Component{
       
         const item =event.target.name;
         const isChecked = event.target.checked;
+        let id =event.target.id;
+       
+        let check_in_date = this.formatDate(this.props.date[0]);
+        let check_out_date = this.formatDate(this.props.date[1]);
+        if(isChecked){
+          
+            this.setState(prevState=>({facility_id :[id,...prevState.facility_id]}));
+        }else{
+            var array = [...this.state.facility_id]; // make a separate copy of the array
+            var index = array.indexOf(id)
+            if (index !== -1) {
+              array.splice(index, 1);
+              this.setState({facility_id: array});
+            }
+        }
+        
         this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+        
         
     }
 
     componentDidUpdate(){
         let check_in_date = this.formatDate(this.props.date[0]);
         let check_out_date = this.formatDate(this.props.date[1]);
-        let checkedItems = [];
-        this.state.checkedItems.forEach(function(value, key) {
+        let checkedItems =  this.state.facility_id;
+        /*this.state.checkedItems.forEach(function(value, key) {
             if(value=== true){
                 checkedItems =[...checkedItems,key];
             }
-          });
+          });*/
         
         this.props.searchHotels(check_in_date,check_out_date,this.props.cityId,null,null,null,null,checkedItems);
     }
@@ -58,20 +76,36 @@ class HotelFacilities extends React.Component{
 
     
     displayAccomodationFacilites(){
-        return this.props.hotelFacilities.map((facility_detail)=>{
-            var checkBoxVal = false;
-            if(this.state.checkedItems.get(facility_detail.name) === undefined){
-                checkBoxVal =false;
-            }else{
-                checkBoxVal = this.state.checkedItems.get(facility_detail.name)
-            }
+        if( Array.isArray( this.props.hotelFacilities.map ) )
+        {
+            return this.props.hotelFacilities.map((facility_detail)=>{
+           
+                var checkBoxVal = false;
+                if(this.state.checkedItems.get(facility_detail.name) === undefined){
+                    checkBoxVal =false;
+                }else{
+                    checkBoxVal = this.state.checkedItems.get(facility_detail.name)
+                }
+                return (
+                    
+                    <div className="checkbox" key={facility_detail.id}>
+                        <label><input name={facility_detail.name} type="checkbox" checked={checkBoxVal} onChange={this.handleOnChange} id={facility_detail.id}/>{facility_detail.name}</label>
+                    </div>
+                )
+            })
+        }
+        else{
             return (
-                
-                <div className="checkbox" key={facility_detail.id}>
-                    <label><input name={facility_detail.name} type="checkbox" checked={checkBoxVal} onChange={this.handleOnChange} />{facility_detail.name}</label>
-                </div>
+                <div></div>
             )
-        })
+        }
+    }
+
+    componentDidUpdate(){
+        let check_in_date = this.formatDate(this.props.date[0]);
+        let check_out_date = this.formatDate(this.props.date[1]);
+        let checkedItems =  this.state.facility_id;
+        this.props.searchHotels(check_in_date,check_out_date,this.props.cityId,null,null,null,null,checkedItems);
     }
     
     render(){

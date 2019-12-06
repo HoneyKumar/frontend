@@ -18,8 +18,6 @@ class HotelDetailsComponent extends React.Component{
         let hotelID = this.props.hotelDetail.hotel_details.HotelID;
       
         this.props.reserveRoom(hotelID, roomId, totRooms);
-        
-
     }
 
     getPerNightPrice = (numberOfNights,totalPrice)=>{

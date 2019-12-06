@@ -7,6 +7,10 @@ import bookHotel from './bookHotel';
 import checkBookingStatus from './checkBookingStatus';
 import signInUser from './signInUser';
 import hotelFacilities from './hotelFacilities';
+import fetchRooms from './fetchRooms';
+import selectRooms from './selectRoom';
+import setRoomRates from './setRoomRates';
+import selectGuest from './selectGuest';
 
 export default combineReducers({
     cities : citiesReducer,
@@ -16,5 +20,9 @@ export default combineReducers({
     bookHotel : bookHotel,
     isBooked : checkBookingStatus,
     userDetails : signInUser,
-    hotelFacilities : hotelFacilities
+    hotelFacilities : hotelFacilities,
+    rooms : fetchRooms,
+    selectedRoom : selectRooms,
+    selectGuest: selectGuest,
+    setRoomRates: setRoomRates
 });

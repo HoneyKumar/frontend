@@ -4,344 +4,1033 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
  */
 
-body {
-	font-family: 'Helvetica', 'Arial', 'sans-serif';
-}
-@font-face {
+ @font-face {
 	font-family: 'MyriadPro-Regular';
 	src: url('../fonts/MyriadPro-Regulard41d.eot?#iefix') format('embedded-opentype'), url('../fonts/MyriadPro-Regular.otf') format('opentype'), url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Helvetica', 'Arial', 'sans-serif';
-	font-weight: 200;
-	letter-spacing: 1px;
-}
-
-
-.search-wrapper {
-	background: #20274d;
-	width: 100%;
-	float: left;
-	padding: 15px 0;
-	margin-bottom: 40px;
-}
-.search-col-one, .search-col-two, .search-col-three{
-	width: 32%; 
-	float: left;
-	margin: 0 5px;
-}
-.search-col-three2 { width: 25%;float: left; margin: 0 5px; }
-.search-col-three3 { width: 25%;float: left; margin: 0 5px; }
-.search-col-one input{
-	width: 100%;
-	border-radius: 5px;
-	height: 48px;
-	display: inline-block;
-	border: 0;
-	padding: 5px 10px 5px 40px;
-    background: url(../images/search-icon.jpg) no-repeat #fff 9px 12px;
-}
-.search-col-two input{
-	width: 49%;
-	border-radius: 5px;
-	height: 48px;
-	display: inline-block;
-	border: 0;
-	padding: 5px 10px 5px 40px;
-    background: url(../images/calender-icon.jpg) no-repeat #fff 9px 12px;
-}
-.search-col-three input{
-	width: 49%;
-	border-radius: 5px;
-	height: 48px;
-	float: left;
-	border: 0;
-	padding: 5px 10px 5px 40px;
-    background: url(../images/adult-icon.jpg) no-repeat #fff 9px 12px;
-}
-.search-col-three a{
-	background: #169fd6;
-	width: 49%;
-	border-radius: 5px;
-	height: 48px;
-	float: left;
-	color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 48px;
-    margin-left: 5px;
-    font-weight: 700;
-}
-.search-col-three a:hover{
-	text-decoration: none;
-}
-
-
-
-
-/*========= Hotel Listing Section ===============*/
-.hotel-recommend-col h3{
-	color: #2a2a2e; 
-	font-size: 14px;
-    font-weight: 600;
-    margin: 12px 0;
-}
-.map-view-col {
-    width: 100%;
-    display: block;
-    border: 2px solid #dddfe2;
-    margin-bottom: 30px;
-}
-.map-view-col img {
-    width: 100%;
-}
-.hotel-recommend-list{
-	border: 1px solid #dddfe2;
-	width: 100%;
-    min-height: 120px;
-    margin: 0 0 8px 0;
-}
-.hotel-recommend-list figure{
-	width: 73px;
-	display: table-cell;
-	vertical-align: middle;
-	align-items: center;
-	float: left;
-	height: 118px;
-    overflow: hidden;
-}
-.hotel-recommend-list figure img{
-	display: inline-block;
-}
-.hotel-recommend-info{
-	padding: 8px;
-	float: left;
-	width: 79%;
-}
-.hotel-recommend-name {
-	font-weight: 600;
-    margin-bottom: 2px
-}
-.hotel-recommend-price-details{
-	text-align: right;
-}
-.hotel-recommend-pernighttext {
-	font-size: 10px;
-    line-height: 10px;
-    margin: 3px 0;
-    display: block;
-}
-.hotel-recommend-price {
-	font-size: 14px;
-    line-height: 14px;
-    font-weight: 600;
-    color: #e12d2d;
-    display: block;
-}
-.hotel-listing-wrap {
-    display: block;
-}
-.hotel-listing-wrap ul{margin:0; padding: 0;}
-.hotel-listing-wrap ul li{
-	list-style-type: none;
-	float: left;
-	width: 100%;
-	border: 1px solid #dddfe2;
-    min-height: 220px;
-    margin: 0 0 15px 0;
-    transition: box-shadow, 0.2s, ease-in-out;
-    box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
-}
-.hotel-listing-wrap ul li a:hover{text-decoration: none;}
-.hotel-listing-info{
-	padding: 8px 8px 38px 8px;
-	float: left;
-	width: 64%;
-}
-.hotel-listing-list figure{
-	width: 260px;
-	display: table-cell;
-	vertical-align: middle;
-	align-items: center;
-	float: left;
-	height: 218px;
-    overflow: hidden;
-}
-.hotel-listing-list figure img{
-	height: 100%;
-}
-.hotel-listing-infobox {
-    float: left;
-    width: 42%;
-    padding: 8px 10px;
-    border-right: 1px solid #dddfe2;
-    min-height: 218px;
-}
-.hotel-listing-name{
-	font-weight: 600;
-    margin-bottom: 5px
-}
-.hotel-listing-location {
-    color: #0283df;
-    font-weight: 700;
-    font-size: 12px;
-    position: relative;
-    padding-left: 16px;
-    display: block;
-}
-.hotel-listing-infobox a.hotel-listing-location:hover{
-	text-decoration: underline;
-	color: #0283df;
-}
-.hotel-listing-location i{
-	font-size: 16px;
-	padding-right: 5px;
-    position: absolute;
-    left: 0;
-}
-.hotel-listing-feedback{
-	width: 100%;
-	float: left;
-	margin: 10px 0 5px;
-}
-.hotel-listing-feedback ul li{
-	list-style-type: none;
-	float: left;
-	padding: 2px 10px;
-	width: auto;
-    min-height: auto;
-    box-shadow: none;
-    margin: 0 10px 8px 0;
-    border-color: #333;
-}
-.hotel-listing-feedback ul li.active{
-	border-color: #66be5b;
-}
-.hotel-listing-feedback ul li.active a{
-	color: #66be5b;
-}
-.hotel-listing-feedback ul li a {
-    font-size: 12px;
-    display: block;
-    color: #333;
-    font-weight: 700;
-}
-.hotel-listing-PriceAndReview {
-    width: 22%;
-    float: right;
-    padding: 8px 8px 8px 8px;
-    position: relative;
-    min-height: 218px;
-}
-.PriceAndReview-price-wrapper {
-    text-align: right;
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-}
-.price-bags-col {
-    background: #d8eed5;
-    font-size: 10px;
-    line-height: 12px;
-    display: inline-block;
-    font-weight: bold;
-    vertical-align: middle;
-    text-align: center;
-    padding: 5px 6px 4px 6px;
-    color: #28871c;
-    margin: 5px 0;
-}
-.PriceAndReview-priceper {
-    color: #737373;
-    font-size: 10px;
-}
-.PriceAndReview-price-box span{
-	color: #737373;
-}
-.PriceAndReview-price-box {
-    font-size: 22px;
-    line-height: 22px;
-    font-weight: 700;
-    color: #e12d2d;
-    margin: 5px 0;
-}
-.hotel-review-details {
-    display: block;
-    width: 65%;
-    float: left;
-    text-align: right;
-}
-.hotel-review-count {
-    font-weight: 700;
-    font-size: 12px;
-    padding-top: 4px;
-    line-height: 12px;
-    color: #777;
-}
-.hotel-review-text {
-    font-size: 14px;
-    overflow-wrap: break-word;
-    line-height: 12px;
-    font-weight: 600;
-    color: #333;
-}
-.hotel-review-score {
-    width: 40px;
-    height: 30px;
-    display: block;
-    float: right;
-    background: #169fd6;
-    color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 30px;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-
-
-
-
-
-
-
-
-
-/*========== Responsive ==============*/
-
-@media screen and (max-width: 1750px) {
-
-	
-
-}
-
-@media screen and (max-width: 1599px) {
-
-	
-
-}
-
-@media screen and (max-width: 1366px) {
-	
-
-}
-
-@media screen and (max-width: 1199px) {
-	
-	
-
-}
-
-@media screen and (max-width: 991px) {
-	
-	
-}
-
-@media screen and (max-width: 767px) {
-
-
-
-}
+ }
+  
+  /****************Fonts End************/
+  
+  *{margin: 0; padding: 0;}
+  body{background: #dae4ef; color: #fff; font-family: 'Open Sans', sans-serif; }
+  .pad-none{padding: 0;}
+  .pad-left{padding-left: 0;}
+  .pad-right{padding-right: 0;}
+  .pad-right10{padding-right: 10px;}
+  .pad-right5{padding-right: 5px;}
+  .pad-left10{padding-left: 10px;}
+  .pad-top10{padding-top: 10px;}
+  .pad-left5{padding-left: 5px;}
+  .mg-left{margin-left: 0;}
+  .float-right{float: right!important;}
+  button:focus{outline: none;}
+  .icon-pad{padding-right:10px;}
+  .gray-txt{color:#adb2be;}
+  .blue-txt{color:#468bca !important;}
+  .orange-txt{color:#ea5a5b!important;}
+  /*-----------------Header Css------------------*/
+  .header{
+      background-color:#eef5fb;
+      padding-left:30px;
+      padding-right:30px;
+      padding-top:15px;
+      padding-bottom:15px;
+          position: relative;
+      z-index: 11;
+  }
+  .btn{
+      font-family: 'Open Sans', sans-serif;
+      font-size:18px;
+      font-weight:600;
+      padding-top:8px;
+      padding-bottom:8px;
+  }
+  .btn:hover{
+      transition:all 0.5s ease-in-out;
+      color:#fff;
+  }
+  .btn + .btn{
+      margin-left:15px;
+  }
+  .tool-left{
+      text-align:left;
+      float:left;
+  }
+  .tool-right{
+      text-align:right;
+      float:right;
+  }
+  .btn-width{
+      width:147px;
+  }
+  .btn-gray{
+      background-color:#5f6f8a;
+  }
+  .btn-success{
+      background-color:#83c441;
+  }
+  .btn-primary{
+      background-color:#468bca;
+  }
+  .btn-danger{
+      background-color:#ea5a5b;
+      border-color:#ea5a5b;
+  }
+  /*-----------------End Header Css------------------*/
+  
+  /***************Main Content Css***********/
+  .main{
+      padding:50px;
+  }
+  .content.enquery{
+          padding:55px 50px 55px 50px;
+          background-color:#fff;
+  }
+  .enquery .header-content{
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color:#83c441;
+      font-family: 'Open Sans', sans-serif;
+      font-size:30px;
+      font-weight:600;
+      padding:9px 30px;
+  }
+  .enquery .search-area{
+      background-color:#eef5fb;
+      padding:10px 40px 20px 40px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      margin-top:20px;
+  }
+  .enquery .panel-heading{
+      font-family: 'Open Sans', sans-serif;
+      font-size:18px;
+      font-weight:600;
+      color:#478bca;
+  }
+  .enquery .panel-heading img, .enquery .panel-heading span {
+      vertical-align: middle;
+  }
+  .enquery .panel-heading img {
+      padding-right: 13px;
+  }
+  .enquery .panel-body{
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color:#fff;
+  }
+  .enquery .panel-body {
+      padding-left: 50px;
+  }
+  .enquery .headDetail, .headDetail{
+      font-family: 'Open Sans', sans-serif;
+      font-weight:600;
+      color:#5b677a;
+  }
+  .enquery .headDetail h3, .headDetail h3{
+      font-size:16px;
+      margin:0;
+      text-transform:uppercase;
+      font-weight:600;
+  }
+  .enquery .headDetail .Date, .enquery .headDetail .person, .headDetail .Date, {
+      font-size:14px;
+      margin:0;
+  }
+  .icon{
+      color:#adb2be;
+  }
+  .enquery .box-detail .headDetail, .box-detail .headDetail, .enquery .box-detail .icon, .box-detail .icon {
+      display: inline-block;
+      vertical-align: top;
+  }
+  .enquery .box-detail .icon, .box-detail .icon{
+      margin-right:13px;
+  }
+  .enquery .hotelOverview a {
+      float: left;
+      width: auto;
+  }
+  
+  .enquery .hotelOverview .overview {
+      float: left;
+      
+      line-height: 24px;
+  }
+  .overview {
+      font-size: 14px;
+      color: #5b677a;
+      font-family: 'Open Sans', sans-serif;
+  }
+  .enquery .hotelOverview .overview h2{
+      margin:0;
+      color:#5b677a;
+      font-family: 'Open Sans', sans-serif;
+      font-weight:600;
+      font-size:24px;
+      margin-bottom: 15px;
+      display: inline-block;
+      
+  }
+  .enquery .hotelOverview .star-rating {
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 3px;
+  }
+  
+  .enquery .hotelOverview .star-rating .fa.fa-star, .star-rating .fa.fa-star, .enquery .hotelOverview .star-rating .fa.fa-star-o , .star-rating .fa.fa-star-o {
+      font-size: 16px;
+      padding-left: 3px;
+      padding-right: 3px;
+      color:#dae4ef;
+  }
+  .enquery .hotelOverview .star-rating .fa.fa-star.orange, .star-rating .fa.fa-star.orange{color: #ea5a5b;}
+  .enquery .hotelOverview .overview h3, .bookingArea h3{
+      margin:0;
+      color:#468bca;
+      font-family: 'Open Sans', sans-serif;
+      font-weight:600;
+      font-size:18px;
+      margin-bottom: 12px;
+      
+  }
+  .enquery .overview ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+  }
+  
+  .enquery .overview ul li a {
+      font-size: 14px;
+      vertical-align: middle;
+      color: #8f9aab;
+      float: none!important;
+      display: inline-block;
+  }
+  
+  .enquery .overview ul li {
+      display: inline-block;
+      margin-right: 12px;
+  }
+  .enquery .overview ul li a:hover{
+      text-decoration:none;
+  }
+  .enquery .overview ul li a img {
+      vertical-align: middle;
+      padding-right: 5px;
+  }
+  .enquery .extra .btn, .extra .btn {
+      font-size: 13px;
+      font-weight: normal;
+      padding-top: 6px;
+      padding-bottom: 6px;
+  }
+  .extra .btn{
+      font-size:16px;
+  }
+  .enquery .extra .btn+.btn, .extra .btn+.btn {
+      margin-left: 10px;
+  }
+  .enquery label, .extra label{
+      color: #5b677a;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-bottom: 0;
+  }
+  .enquery .extra, .extra {
+      margin-top: 20px;
+  }
+  .enquery .transport, .enquery .summary{
+      background-color:#eef5fb;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      padding:50px;
+      
+  }
+  .enquery .transport h2, .enquery .locations h2{
+      color: #83c441;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      margin-top:0;
+  }
+  .enquery .transport h3, .enquery .locations h3{
+      color: #5b677a;
+      font-family: 'MyriadPro-Regular';
+      font-weight: normal;
+      font-size: 30px;
+      margin-top:0;
+  }
+  .enquery .carIcon {
+      padding-top: 45px;
+      padding-bottom: 20px;
+  }
+  .enquery .stepwizard-step p {
+      margin-top: 10px;
+      color: #468bca;
+      font-family: 'MyriadPro-Regular';
+      font-weight: normal;
+      font-size: 20px;    
+  }
+  
+  .enquery .stepwizard-row {
+      display: table-row;
+  }
+  
+  .enquery .stepwizard {
+      display: table;     
+      width: 100%;
+      position: relative;
+      max-width: 380px;
+      margin: 0 auto;
+  }
+  
+  .enquery .stepwizard-step:before {
+      top: 11px;
+      bottom: 0;
+      position: absolute;
+      content: " ";
+      width: 100%;
+      height: 1px;
+      border-bottom: dotted 5px #d2dde9;
+      z-index: 0;
+  }
+  .enquery .stepwizard-step img {
+      position: relative;
+      z-index: 1;
+  }
+  .enquery .stepwizard-step:last-child:before{
+      display:none;
+  }
+  .enquery .stepwizard-step:last-child img {
+      height: 20px;
+  }
+  
+  .enquery .stepwizard-step {    
+      display: table-cell;
+      position: relative;
+  }
+  .enquery .locations h2 {
+      padding-left: 60px;
+  }
+  .enquery .notice .panel-body {
+      padding: 20px;
+      font-size: 18px;
+      color: #5b677a;
+      margin-top: 50px;
+  }
+  .text-success {
+      color: #83c441;
+  }
+  .enquery .notice h4 {
+      font-size: 28px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      margin-top: 0;
+  }
+  .enquery .summary {
+      padding: 50px 40px;
+  }
+  .enquery .summary h2{
+      color:#5b677a;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size:36px;
+      margin-top:0;
+      margin-bottom:45px;
+  }
+  .enquery .summary ul li {
+      display: inline-block;
+      font-size:18px;
+      color:#83c441;
+      margin-bottom: 15px;
+  }
+  .enquery .summary .cost_box{
+      margin:45px 0px;
+      background-color:#fff;
+      padding:30px;
+      width:100%;
+  }
+  .enquery .summary .cost_box label{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size:26px;
+      color:#478bca;
+      margin-bottom: 10px;
+  }
+  .enquery .summary .cost_box .price{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size:36px;
+      color:#ea5a5b;
+  }
+  .enquery .summary label{
+      font-family: 'Open Sans', sans-serif;
+      font-size:18px;
+      color:#ea5a5b;
+      font-weight:normal
+  }
+  .enquery .summary .booking-btn{
+      padding-top:68px;
+      padding-bottom:20px;
+  }
+  /**************Footer Css******/
+  footer{
+      background-color:#fff;
+      text-align:center;
+  }
+  /*******************Sidebar css*************************/
+  .sidebar{
+      width:300px;
+      float:left;
+      display:inherit;
+  }
+  .content.result{
+      background-color:transparent;
+  }
+  .refine, .package, .sidebarBox{
+      background-color:#fff;
+      margin-bottom: 45px;
+      display:block;
+  }
+  .sidebarBox h3{
+      background-color: #468bca;
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 0;
+      text-align: center;
+      padding: 15px 0px;
+      position:relative;
+  }
+  .sidebarBox h3:after, .sidebarBox h3:before {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+  }
+  
+  
+  .sidebarBox h3:after {
+      border-color: rgba(69, 139, 202, 0);
+      border-top-color: #458bca;
+      border-width: 10px;
+      margin-left: -10px;
+  }
+  .sidebarBox h3:before {
+      border-color: rgba(69, 139, 202, 0);
+      border-top-color: #458bca;
+      border-width: 10px;
+      margin-left: -10px;
+  }
+  .sidebarBox .form-group label{
+      color:#5b677a;
+      font-size:16px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight:600;
+  }
+  /*****************Custom Checkbox************/
+  .refine .checkbox input[type="checkbox"], .CheckHeader .checkbox input[type="checkbox"], .pricing .checkbox input[type="checkbox"] {
+      opacity: 0;
+  }
+  .refine .checkbox label, .CheckHeader .checkbox label  {
+      display: inline-block;
+      position: relative;
+      padding-left: 25px;
+      font-size:15px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight:normal;
+      color:#5b677a;
+  }
+  .refine .checkbox-success input[type="checkbox"]:checked + label:before, .CheckHeader .checkbox-success input[type="checkbox"]:checked + label:before, .pricing .checkbox-success input[type="checkbox"]:checked + label:before {
+      background-color: #5cb85c;
+      border-color: #5cb85c;
+  }
+  .refine .checkbox-success input[type="checkbox"]:checked + label:before, .CheckHeader .checkbox-success input[type="checkbox"]:checked + label:before, .pricing .checkbox-success input[type="checkbox"]:checked + label:before {
+      background-color: #5cb85c;
+      border-color: #5cb85c;
+  }
+  
+  .refine .checkbox label:before, .CheckHeader .checkbox label:before, .pricing .checkbox label:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: 0px;
+      border: 2px solid #dae4ef;
+      border-radius: 0px;
+      background-color: transparent;
+      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      top: 3px;
+  }
+  .refine .checkbox-success input[type="checkbox"]:checked + label:after, .CheckHeader .checkbox-success input[type="checkbox"]:checked + label:after, .pricing .checkbox-success input[type="checkbox"]:checked + label:after {
+      color: #fff;
+  }
+  
+  .refine .checkbox input[type="checkbox"]:checked + label:after, .CheckHeader .checkbox input[type="checkbox"]:checked + label:after, .pricing .checkbox input[type="checkbox"]:checked + label:after  {
+      font-family: 'FontAwesome';
+      content: "\f00c";
+  }
+  .refine .checkbox label:after, .CheckHeader .checkbox label:after, .pricing .checkbox label:after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: 0px;
+      padding-left: 3px;
+      padding-top: 4px;
+      font-size: 11px;
+      color: #555555;
+  }
+  .refine .form-control{
+      border-color:#c9e1f5;
+  }
+  .refine .priceDisplay, .refine .SelectRating {
+      font-size: 13px;
+      color: #9099a8;
+      font-family: 'Open Sans', sans-serif;
+      padding-top:5px;
+  }
+  .refine  .star-rating .fa.fa-star-o, .refine  .star-rating .fa.fa-star{
+      font-size:24px;
+  }
+  .ratings {
+      display: inline-block;
+      padding-left: 20px;
+      padding-top: 5px;
+  }
+  
+  .ratings span {
+      color: #5cb85c;
+  }
+  .package ul.hotelName{
+      margin:0px;
+      padding:0px;
+      list-style-type:none;
+      margin-top:30px;
+  }
+  .package ul.hotelName li{
+      display:block;
+      font-family: 'Open Sans', sans-serif;
+      color:#9099a8;
+      padding-bottom:15px;
+      font-size:16px;
+  }
+  .package ul.hotelName li span{
+      padding-right:10px;
+  }
+  .package ul.hotelName li:last-child {
+      padding-bottom: 0;
+  }
+  .sidebarBox .GuestDetail label{
+      font-family: 'Open Sans', sans-serif;
+      color:#9099a8;
+      font-size: 13px;
+      font-weight: normal;
+  }
+  .sidebarBox .GuestDetail label i{
+      color:#9b9595;
+      font-size:20px;
+      vertical-align: middle;
+      padding-right: 8px;
+  }
+  .sidebarBox .priceBox .Total {
+      display: block;
+      color: #468bca;
+      font-size: 16px;
+  }
+  .priceBox {
+      margin-top: 25px;
+  }
+  .sidebarBox .priceBox .Total {
+      display: block;
+      color: #468bca;
+      font-size: 16px;
+  }
+  .sidebarBox .priceBox .PriceBig {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #ea5a5b;
+      line-height: 25px;
+      margin-bottom: 20px;
+      display:block;
+  }
+  /**********End Sidebar Css***************/
+  .content.result{
+      margin:0 0px 0 330px;
+      position: relative !important;
+  }
+  .SortingHeader{
+      background-color:#5f6f8a;
+      padding:10px 22px;
+      width:100%;
+      height: auto;
+      float: left;
+      border-radius: 5px;
+  }
+  .sortingGroup{
+      float:left;
+      padding-top: 5px;
+  }
+  .SearchBox{
+      float:right;
+  }
+  .sortingGroup label {
+      margin: 0;
+      vertical-align: middle;
+      font-size: 18px;
+      font-weight: normal;
+  }
+  .sortingGroup ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: inline-block;
+      vertical-align: middle;
+  }
+  
+  .sortingGroup ul li {
+      display: inline-block;
+      font-size: 16px;
+  }
+  
+  .sortingGroup ul li a {
+      color: #fff;
+      padding: 7px 15px;
+      border-right: solid 1px #7b8eab;
+  }
+  .stylish-input-group{
+      width:231px;
+  }
+  .stylish-input-group .input-group-addon{
+      background: white !important;
+  }
+  .stylish-input-group .form-control{
+      border-right:0; 
+      box-shadow:0 0 0; 
+      border-color:#ccc;
+  }
+  .stylish-input-group button{
+      border:0;
+      background:transparent;
+      color: #83c441;
+  }
+  .innerContainer{
+      background-color:#eef5fb;
+      border-radius:5px;
+      padding:30px;
+      float:left;
+      width:100%;
+      margin:30px 0 0 0;
+  }
+  .CheckHeader{
+      background-color:#fff;
+      padding:5px 45px;
+      width:100%;
+      border-radius: 5px;
+  }
+  .CheckHeader .checkbox {
+      margin: 10px 0;
+  }
+  .tab-container{
+      padding-top:25px;
+  }
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav-tabs>li>a:hover {
+      color: #fff;
+      cursor: pointer;
+      background-color: #468bca;
+      border: 1px solid #468bca;
+      border-bottom-color: transparent;
+  }
+  .nav-tabs>li>a {
+      padding-left: 50px;
+  }
+  .nav-tabs>li>a{
+      color: #fff;
+      cursor: pointer;
+      background-color: #5f6f8a;
+      border: 1px solid #5f6f8a;
+      border-bottom-color: transparent;
+      font-size: 20px;
+      font-weight: 600;
+  }
+  .nav-tabs>li>a span {
+      margin-top: -2px;
+      display: inline-block;
+      position: absolute;
+      left: 16px;
+  }
+  .panel-tab-body{
+      padding-left:50px;
+      padding-right:50px;
+      background-color:#fff;
+      padding-top: 25px;
+  }
+  .tab-container .headDetail p {
+      font-weight: normal;
+      margin-bottom: 0;
+  }
+  .tab-container .box-detail {
+      margin-bottom: 15px;
+  }
+  button.btn.btn-default.dropdown-toggle.btn-drop {
+      background: #dae4ef;
+      padding: 5px;
+      line-height: 6px;
+      height: 23px;
+      width: 29px;
+      border-radius: 0;
+      border-color: #dae4ef;
+      font-size: 12px;
+      color:#468bca;
+  }
+  .customerTab .btn-group{
+      position: absolute;
+      right: 5%;
+      top: 0;
+  }
+  .customerTab .dropdown-menu {
+      min-width: 304px;
+      padding: 20px;
+      background-color: #5993ce;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+  }
+  .customerTab .dropdown-menu li.whiteBox {
+      background: #fff;
+      padding: 8px 15px;
+      border-radius: 3px;
+      color: #5f6f8a;
+      font-size: 16px;
+      font-weight: 600;
+  }
+  .customerTab .dropdown-menu li.whiteBox input {
+      display: inline-block;
+      max-width: 89px;
+      border: none;
+  }
+  .customerTab .dropdown-menu li.whiteBox input:focus{
+      outline:none;
+  }
+  .customerTab .dropdown-menu li .input-group-btn:last-child>.btn, .customerTab .dropdown-menu li .input-group-btn:first-child>.btn{
+      border-radius: 4px;
+      font-size: 14px;
+      padding: 11px 18px;
+      text-align: center;
+      background: #9db5ce;
+      color: #fff;
+      border:none;
+  }
+  .customerTab .dropdown-menu li .input-number, .customerTab .dropdown-menu li .dropdown-selection {
+      border-radius: 4px!important;
+      height: 43px;
+      border-color:#9db5ce;
+      box-shadow: none;
+      color: #5f6f8a;
+      font-size: 16px;
+      font-weight: 600;
+  }
+  .customerTab .dropdown-menu li h4.title-journey{
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 5px;
+  }
+  .customerTab .dropdown-menu li.pricing span {
+      display: inline-block;
+      vertical-align: top;
+  }
+  
+  .customerTab .dropdown-menu li.pricing span p {
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: 600;
+  }
+  .customerTab .dropdown-menu li.pricing{
+      margin-bottom:30px;
+  }
+  
+  .customerTab .dropdown-menu li.whiteBox span.dashed {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  .title{
+      font-size:22px;
+      margin-top:22px;
+      margin-bottom:20px;
+      color:#478bca;
+      font-weight:600;
+  }
+  .HotelBooking{
+      padding:50px;
+      background-color:#fff;
+      margin-bottom:30px;
+  }
+  ul.thumb li {
+      display: inline-block;
+      border: solid 3px #dce5ef;
+      border-radius: 2px;
+      width: 101.7px;
+      height: 78px;
+      margin-top:13px;
+  }
+  .fa-1x {
+      font-size: .9em!important;
+  }
+  .MainImage {
+      border: solid 5px #dce5ef;
+      display: inline-block;
+  }
+  .bookingArea h2 {
+      margin: 0;
+      color: #5b677a;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      margin-bottom: 15px;
+      <position:relative;
+  }
+  .bookingArea .star-rating {
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+  .marker {
+      font-size: 40px !important;
+      vertical-align: middle;
+      padding-right: 25px;
+  }
+  .bookingArea p {
+      font-size: 16px;
+      line-height: 26px;
+      color: #5b677a;
+  }
+  .Selection{
+      padding-top:30px;
+  }
+  .Selection .btn-number{
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 400;
+  }
+  .Selection .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group, .customerTab .dropdown-menu li .input-group-btn:first-child>.btn {
+      margin-right: 5px;
+  }
+  .Selection .input-group-btn:last-child>.btn, .Selection .input-group-btn:last-child>.btn-group, .customerTab .dropdown-menu li .input-group-btn:last-child>.btn {
+      z-index: 2;
+      margin-left: 5px;
+  }
+  .Selection .input-group-btn:last-child>.btn, .Selection .input-group-btn:first-child>.btn{
+      border-radius: 4px;
+      font-size: 12px;
+      padding: 5px 10px;
+      text-align: center;
+      background: #9db5ce;
+      color: #fff;
+      border:none;
+  }
+  .Selection .input-number {
+      border-radius: 4px!important;
+      height: 27px;
+      border-color:#9db5ce;
+      box-shadow: none;
+  }
+  .btn-gray{
+      background-color:#dce5ef;
+      color:#fff;
+  }
+  
+  .btn-select {
+      font-size: 26px!important;
+      margin-left: 42px!important;
+      text-transform: capitalize;
+      padding-left: 45px;
+      padding-right: 45px;
+      border-radius: 3px;
+  }
+  .Selection .extra{
+      margin-top:45px !important;
+  }
+  .pagination>li>a, .pagination>li>span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: 5px;
+      line-height: 1.42857143;
+      color: #337ab7;
+      text-decoration: none;
+      background-color: #fff;
+      border: none;
+      margin-right: 5px;
+      font-size:16px;
+      color:#5b677a;
+      border-radius:0px !important;
+  }
+  .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+      background-color:#518fcc;
+      color:#fff;
+  }
+  li.pricing .checkbox {
+      margin: 0;
+  }
+  .navbar-toggle {
+      position: relative;
+      float: right;
+      padding: 9px 10px;
+      margin-top: 0;
+      margin-right: 15px;
+      margin-bottom: 0px;
+      background-color:#468bca;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      margin-left: 5px;
+  }
+  .navbar-toggle .icon-bar {
+      background-color: #fff;
+  }
+  body.show_sidebar {
+      position: relative;
+  }
+  body.show_sidebar:after {
+      background: rgba(0,0,0,0.5);
+      position: absolute;
+      z-index: 10;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+  }
+  
+  /***********************Responsive Css*****************/
+  @media screen and (max-width: 1600px){
+  .enquery .box-detail .icon{margin-right: 4px;}
+  .enquery .box-detail .headDetail{max-width:110px;}
+  .enquery .headDetail h3 {font-size: 12px;}
+  .enquery .summary {padding:50px 20px;}
+  .enquery .summary .cost_box .price {font-size: 25px;color: #ea5a5b;}
+  .enquery .summary .cost_box label{font-size:18px;}
+  .enquery .summary ul li {font-size:16px;}
+  .btn-width {width: auto;}
+  .nav-tabs>li>a{font-size:16px;}
+  .headDetail h3 {font-size:12px;}
+  .panel-tab-body{padding-left: 15px;padding-right: 15px;}
+  .box-detail .headDetail {max-width: 100px;}
+  .HotelBooking {padding: 15px;}
+  .bookingArea .star-rating{position: relative;top: 0;right: 0;}
+  .extra label {display: block;}
+  .extra .btn+.btn{margin-left:0px;}
+  .btn-select{margin-left:0px !important;}
+  
+  }
+  @media screen and (max-width: 1200px){
+  .enquery .hotelOverview .overview{max-width:600px;margin-bottom:20px;}
+  .enquery .transport{padding:30px;}
+  .enquery .box-detail .headDetail {max-width: 100%;}
+  .enquery .summary .cost_box .price {font-size: 45px;color: #ea5a5b;}
+  .enquery .summary .cost_box label{font-size:26px;}
+  .sidebar {margin-left: -350px;position: absolute;z-index: 110;transition:all 0.5s ease-in-out;}
+  .show_sidebar .sidebar {margin-left: 0px !important;}
+  .content.result {margin: 0 0px 0 0px;}
+  .extra label {display: block;}
+  .extra .btn+.btn{margin-left:0px;}
+  .btn-select{margin-left:0px !important;}
+  .box-detail .headDetail {max-width: 100%;}
+  }
+  @media screen and (max-width: 992px){
+  .enquery .hotelOverview .overview{max-width:370px;margin-bottom:20px;    padding-left: 30px;}
+  .enquery .transport{padding:30px;}
+  .enquery .box-detail .headDetail {max-width: 130px;}
+  .enquery .panel-body {padding-left: 20px;}
+  .enquery .headDetail h3 {font-size: 14px;}
+  /***************Result Page Css************/
+  .content.result {margin:0px;}
+  .nav-tabs>li>a{font-size:12px;}
+  .HotelBooking{padding:20px;}
+  .bookingArea h2{font-size:28px;}
+  .extra label{display:block;}
+  .extra .btn+.btn{margin-left:0px;}
+  .extra .btn{margin-bottom:5px;}
+  .sidebar {margin-left: -350px;position: absolute;z-index: 110;transition:all 0.5s ease-in-out;}
+  .show_sidebar .sidebar {margin-left: 0px !important;}
+  .box-detail .headDetail {max-width: 100%;}
+  }
+  
+  
+  @media screen and (max-width: 767px){
+  .btn{font-size:11px;}
+  .btn-width {width: auto;}	
+  .header {padding-left: 15px;padding-right: 15px;}
+  .content.enquery {padding: 55px 15px 55px 15px;}
+  .enquery .search-area{padding-left:15px;	padding-right:15px;}
+  .enquery .header-content{font-size:20px;}
+  .enquery .panel-heading{font-size:16px;}
+  .enquery .panel-body{padding-left:15px;}
+  .enquery .box-detail .headDetail{max-width:100%;}
+  .enquery .hotelOverview .overview{padding-left:0;margin-top:30px;max-width:inherit;}
+  .enquery label {display: block;padding-bottom:5px;}
+  .enquery .extra{margin-bottom:10px;}
+  .enquery .transport{padding:15px;}
+  .enquery .locations h2{text-align:center;padding-left:0;}
+  .enquery .transport h2, .enquery .summary h2{font-size:26px;text-align:center;padding-left:0px;}
+  .enquery .summary h2{font-size:26px;padding-left:0px;margin-bottom:15px;}
+  .enquery .transport h3{font-size:20px;}
+  .enquery .stepwizard-step p{font-size:14px;}
+  .enquery .carIcon {padding-top: 20px;padding-bottom: 20px;}
+  .notice .btn-danger {font-size: 14px;text-transform: lowercase;}
+  .enquery .summary {padding: 15px;margin-top: 15px;}
+  .enquery .summary ul li{font-size:16px;}
+  .enquery .summary .cost_box{padding:15px;}
+  .enquery .summary .cost_box .price{font-size:32px;}
+  .enquery .summary .booking-btn{padding-top:20px;}
+  
+  /**************Result Page reponsive css************/
+  .main {padding: 15px;}
+  .sidebar {margin-left: -350px;position: absolute;z-index: 110;transition:all 0.5s ease-in-out;}
+  .show_sidebar .sidebar {margin-left: 0px !important;}
+  .content.result {width: 100%;margin: 0;}
+  .sortingGroup ul li a {display: block;margin-bottom: 5px;padding:7px 6px;}
+  .SearchBox {max-width: 231px;margin: 0 auto;float:none;}
+  .innerContainer, .CheckHeader{padding:15px;}
+  .nav-tabs>li>a{font-size:16px;}
+  .customerTab .dropdown-menu{min-width:250px;}
+  .panel-tab-body{padding-left:15px;padding-right:15px;}
+  .ratings{padding-left:10px;}
+  .HotelBooking{padding:15px;}
+  .bookingArea .star-rating {position: relative;top: 9px;}
+  .bookingArea h2{font-size:18px;}
+  .extra label{display:block;}
+  .extra .btn+.btn{margin-left:0px;}
+  .enquery .extra .btn+.btn, .extra .btn+.btn {
+      margin-left: 0;
+  }
+  .extra .btn {font-size: 16px;display: block;width: 100%;margin-bottom: 5px;}
+  .btn-select{margin-left:0 !important;}
+  }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {connect} from 'react-redux';
-import {fetchCities,selectDate,selectCity,searchHotels} from '../Actions';
+import {fetchCities,selectDate,selectCity,searchHotels,fetchRooms,selectRoom} from '../Actions';
 
 import Select from 'react-select';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
@@ -32,7 +32,9 @@ class TopSearchBar extends React.Component{
         }
     }
 
-   
+    handlRoomChange = (e)=>{
+        this.props.selectRoom(e);
+    }
     
 
     handleValidation = ()=>{
@@ -84,29 +86,57 @@ class TopSearchBar extends React.Component{
             option = [...option,arr];
             return option;
         }, [{value : 'Select City', label: 'Select City'}]);
+        const roomOptions = Array.from(this.props.rooms).reduce((option,val)=>{
+            let arr = {value : val.BedID,label : val.BedName},
+            options = [...option,arr];
+            return options;
+        },[{value : 'Select Room Type', label: 'Select Room Type'}])
+
         return(
-            <div className="search-wrapper">
-                 <form onSubmit={this.handleSubmit}>
+            <React.Fragment>
                 <div className="container">
-                    <div className="search-col-one">
-                    <Select className="search-icon"
-                                        value = {this.props.selectedOption}
-                                        onChange={this.handleChange}
-                                        options={options}
-                                    />
-                       </div>
-                    <div className="search-col-three2"><DateRangePicker calendarClassName="checkinCheckoutDate"  onChange={this.onChange} value={this.props.date} minDate ={new Date()}/></div>
-                    <div className="search-col-three3"><button type="submit" className="submit-btn Submitbtn2">Search</button></div>
+                    <div className="booking-form">
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="row">
+                                <div className="col-md-3">
+                                    <div className="form-group">
+                                        <span className="form-label">Destination</span>
+                                        <Select value={ this.props.selectedOption } onChange={this.handleChange} options={ this.state.cities } />
+                                    </div>
+                                </div>
+                                <div className="col-md-3">
+                                    <div className="form-group">
+                                        <span className="form-label" style={{display: "block"}}>Date Range</span>
+                                        <DateRangePicker onChange={this.onChange} value={this.props.date} minDate ={new Date()}/>
+                                    </div>
+                                </div>
+                                <div className="col-md-3" >
+                                    <div className="form-group">
+                                        <span className="form-label" style={{display: "block"}}>Select Room Type</span>
+                                        <Select value= { this.props.roomSelectedOption } onChange={this.handlRoomChange} options={ this.state.rooms }/>
+                                    </div>
+                                </div>
+                                <div className="col-md-3">
+                                    <div className="form-group">
+                                        <span className="form-label visibility">displaynone</span>
+                                        <div className="form-btn">
+                                            <button type="submit" className="submit-btn Submitbtn" style={{ width: 140 }}>Search <i className="fa fa-spinner fa-spin" style={{display: this.state.isLoading ? 'inline-block' : 'none' }}></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-            </div>
+            </React.Fragment>
         )
     }
 
 }
 const mapStateToProps = (state) =>{
-  
-    return {cities : state.cities,date : state.date,selectedOption : state.selectedCity}
+    console.log(state);
+    
+    return {cities : state.cities,date : state.date,selectedOption : state.selectedCity,rooms : state.rooms,roomSelectedOption :state.selectedRoom}
 }
 
-export default connect(mapStateToProps,{fetchCities : fetchCities,selectDate,selectCity,searchHotels})(TopSearchBar);
+export default connect(mapStateToProps,{fetchCities : fetchCities,selectDate,selectCity,searchHotels,fetchRooms,selectRoom})(TopSearchBar);
